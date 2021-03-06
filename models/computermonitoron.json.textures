@@ -1,0 +1,15 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "monitor_back",
+        "1": "monitor_bottom",
+        "3": "monitor_forward_on",
+        "4": "monitor_left",
+        "5": "monitor_right",
+        "6": "monitor_top"
+      },
+      "name": "default"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "parent": "networkcraft:custom/switch",
+  "textures": {
+    "all": "networkcraft:blocks/router_bottom",
+    "particle": "networkcraft:blocks/router_bottom",
+    "0": "networkcraft:blocks/router_back",
+    "1": "networkcraft:blocks/router_bottom",
+    "2": "networkcraft:blocks/router_front",
+    "3": "networkcraft:blocks/router_left",
+    "4": "networkcraft:blocks/router_right",
+    "5": "networkcraft:blocks/router_top"
+  }
+}

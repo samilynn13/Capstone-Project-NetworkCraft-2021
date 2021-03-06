@@ -1,0 +1,13 @@
+{
+  "parent": "networkcraft:custom/computermonitoroff",
+  "textures": {
+    "all": "networkcraft:blocks/monitor_bottom",
+    "particle": "networkcraft:blocks/monitor_bottom",
+    "0": "networkcraft:blocks/monitor_back",
+    "1": "networkcraft:blocks/monitor_bottom",
+    "2": "networkcraft:blocks/monitor_forward_off",
+    "4": "networkcraft:blocks/monitor_left",
+    "5": "networkcraft:blocks/monitor_right",
+    "6": "networkcraft:blocks/monitor_top"
+  }
+}

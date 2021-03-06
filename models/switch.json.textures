@@ -1,0 +1,15 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "router_back",
+        "1": "router_bottom",
+        "2": "router_front",
+        "3": "router_left",
+        "4": "router_right",
+        "5": "router_top"
+      },
+      "name": "default"
+    }
+  }
+}
