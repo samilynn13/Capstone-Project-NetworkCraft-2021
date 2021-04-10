@@ -106,6 +106,15 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "switch_block"
+    },
+    {
+      "name": "Desktop",
+      "type": "block",
+      "sortid": 6,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "desktop"
     }
   ],
   "variable_elements": [
@@ -120,6 +129,7 @@
   "language_map": {
     "en_us": {
       "block.networkcraft.computer_monitor_off_block": "Computer Monitor Off Block",
+      "block.networkcraft.desktop": "Desktop",
       "block.networkcraft.computer_monitor_on_block": "Computer Monitor Off Block",
       "block.networkcraft.switch_block": "Switch Block"
     }

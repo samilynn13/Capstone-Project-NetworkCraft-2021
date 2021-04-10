@@ -1,0 +1,30 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "22": "stand_neck_east_west",
+        "11": "screen_south",
+        "23": "screen_east_west",
+        "24": "stand_neck_north_south",
+        "13": "stand_neck_up_down",
+        "15": "stand_bottom_up_down",
+        "16": "stand_bottom_east_west",
+        "17": "stand_bottom_north_south",
+        "18": "desktop_console_north",
+        "19": "desktop_console_south",
+        "0": "desktop_mouse_up",
+        "1": "desktop_mouse_down",
+        "3": "desktop_mouse_north_south_west_east",
+        "4": "desktop_keyboard_up",
+        "5": "desktop_keyboard_north_south",
+        "6": "desktop_keyboard_east_west",
+        "7": "desktop_keyboard_down",
+        "8": "screen_north",
+        "20": "desktop_console_east_west",
+        "21": "desktop_console_up_down",
+        "10": "screen_up_down"
+      },
+      "name": "default"
+    }
+  }
+}

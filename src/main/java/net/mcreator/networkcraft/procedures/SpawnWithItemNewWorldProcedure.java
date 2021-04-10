@@ -11,6 +11,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.Entity;
 
 import net.mcreator.networkcraft.block.SwitchBlockBlock;
+import net.mcreator.networkcraft.block.DesktopBlock;
 import net.mcreator.networkcraft.block.ComputerMonitorOffBlockBlock;
 import net.mcreator.networkcraft.NetworkcraftModVariables;
 import net.mcreator.networkcraft.NetworkcraftModElements;
@@ -41,6 +42,11 @@ public class SpawnWithItemNewWorldProcedure extends NetworkcraftModElements.ModE
 		if ((!(NetworkcraftModVariables.MapVariables.get(world).PlayerJoinedWorldBefore))) {
 			if (entity instanceof PlayerEntity) {
 				ItemStack _setstack = new ItemStack(ComputerMonitorOffBlockBlock.block, (int) (1));
+				_setstack.setCount((int) 1);
+				ItemHandlerHelper.giveItemToPlayer(((PlayerEntity) entity), _setstack);
+			}
+			if (entity instanceof PlayerEntity) {
+				ItemStack _setstack = new ItemStack(DesktopBlock.block, (int) (1));
 				_setstack.setCount((int) 1);
 				ItemHandlerHelper.giveItemToPlayer(((PlayerEntity) entity), _setstack);
 			}

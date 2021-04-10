@@ -1,0 +1,118 @@
+{
+	"credit": "Made with Blockbench",
+	"textures": {
+		"0": "Desktop/Desktop Mouse Up",
+		"1": "Desktop/Desktop Mouse Down",
+		"3": "Desktop/Desktop Mouse North South West East",
+		"4": "Desktop/Desktop Keyboard Up",
+		"5": "Desktop/Desktop Keyboard North South",
+		"6": "Desktop/Desktop Keyboard East West",
+		"7": "Desktop/Desktop Keyboard Down",
+		"8": "Desktop/Screen North",
+		"10": "Desktop/Screen Up Down",
+		"11": "Desktop/Screen South",
+		"13": "Desktop/Stand Neck Up Down",
+		"15": "Desktop/Stand Bottom Up Down",
+		"16": "Desktop/Stand Bottom East West",
+		"17": "Desktop/Stand Bottom North South",
+		"18": "Desktop/Desktop Console North",
+		"19": "Desktop/Desktop Console South",
+		"20": "Desktop/Desktop Console East West",
+		"21": "Desktop/Desktop Console Up Down",
+		"22": "Desktop/Stand Neck East West",
+		"23": "Desktop/Screen East West",
+		"24": "Desktop/Stand Neck North South"
+	},
+	"elements": [
+		{
+			"name": "Desktop Console",
+			"from": [0, 0, 6],
+			"to": [5, 9, 16],
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#18"},
+				"east": {"uv": [0, 0, 16, 16], "texture": "#20"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#19"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#20"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#21"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#21"}
+			}
+		},
+		{
+			"name": "Desktop Keyboard",
+			"from": [6, 0, 3],
+			"to": [16, 1, 6],
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#5"},
+				"east": {"uv": [0, 0, 16, 16], "texture": "#6"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#5"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#6"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#4"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#7"}
+			}
+		},
+		{
+			"name": "Desktop Mouse",
+			"from": [3, 0, 2],
+			"to": [5, 1, 4],
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#3"},
+				"east": {"uv": [0, 0, 16, 16], "texture": "#3"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#3"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#3"},
+				"up": {"uv": [0, 0, 16, 16], "rotation": 180, "texture": "#0"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#1"}
+			}
+		},
+		{
+			"name": "Stand Bottom",
+			"from": [7, 0, 7],
+			"to": [15, 1, 12],
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#17"},
+				"east": {"uv": [0, 0, 16, 16], "texture": "#16"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#17"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#16"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#15"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#15"}
+			}
+		},
+		{
+			"name": "Stand Neck",
+			"from": [10, 1, 9],
+			"to": [12, 9, 10],
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#24"},
+				"east": {"uv": [0, 0, 16, 16], "texture": "#22"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#24"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#22"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#13"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#13"}
+			}
+		},
+		{
+			"name": "Screen",
+			"from": [6, 4, 8],
+			"to": [16, 10, 9],
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#8"},
+				"east": {"uv": [0, 0, 16, 16], "texture": "#23"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#11"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#23"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#10"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#10"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [68, 0, 0]
+		}
+	},
+	"groups": [0, 1, 2,
+		{
+			"name": "Desktop Monitor",
+			"origin": [0, 0, 0],
+			"children": [3, 4, 5]
+		}
+	]
+}

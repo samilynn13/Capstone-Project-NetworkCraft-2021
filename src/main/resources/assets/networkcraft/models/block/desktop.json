@@ -1,0 +1,28 @@
+{
+  "parent": "networkcraft:custom/desktop",
+  "textures": {
+    "all": "networkcraft:blocks/screen_north",
+    "particle": "networkcraft:blocks/screen_north",
+    "22": "networkcraft:blocks/stand_neck_east_west",
+    "11": "networkcraft:blocks/screen_south",
+    "23": "networkcraft:blocks/screen_east_west",
+    "24": "networkcraft:blocks/stand_neck_north_south",
+    "13": "networkcraft:blocks/stand_neck_up_down",
+    "15": "networkcraft:blocks/stand_bottom_up_down",
+    "16": "networkcraft:blocks/stand_bottom_east_west",
+    "17": "networkcraft:blocks/stand_bottom_north_south",
+    "18": "networkcraft:blocks/desktop_console_north",
+    "19": "networkcraft:blocks/desktop_console_south",
+    "0": "networkcraft:blocks/desktop_mouse_up",
+    "1": "networkcraft:blocks/desktop_mouse_down",
+    "3": "networkcraft:blocks/desktop_mouse_north_south_west_east",
+    "4": "networkcraft:blocks/desktop_keyboard_up",
+    "5": "networkcraft:blocks/desktop_keyboard_north_south",
+    "6": "networkcraft:blocks/desktop_keyboard_east_west",
+    "7": "networkcraft:blocks/desktop_keyboard_down",
+    "8": "networkcraft:blocks/screen_north",
+    "20": "networkcraft:blocks/desktop_console_east_west",
+    "21": "networkcraft:blocks/desktop_console_up_down",
+    "10": "networkcraft:blocks/screen_up_down"
+  }
+}

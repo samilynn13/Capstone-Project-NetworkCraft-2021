@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "networkcraft:block/desktop"
+    }
+  }
+}
