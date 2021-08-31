@@ -115,6 +115,32 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "desktop"
+    },
+    {
+      "name": "DeviceInformation",
+      "type": "gui",
+      "sortid": 7,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "device_information"
+    },
+    {
+      "name": "CloseGUI",
+      "type": "procedure",
+      "sortid": 8,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "close_gui",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [
