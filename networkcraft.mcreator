@@ -143,13 +143,13 @@
       }
     },
     {
-      "name": "TestBlock",
-      "type": "block",
+      "name": "Test",
+      "type": "gui",
       "sortid": 9,
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "test_block"
+      "registry_name": "test"
     }
   ],
   "variable_elements": [
@@ -165,7 +165,6 @@
     "en_us": {
       "block.networkcraft.computer_monitor_off_block": "Computer Monitor Off Block",
       "block.networkcraft.desktop": "Desktop",
-      "block.networkcraft.test_block": "Test Block",
       "block.networkcraft.computer_monitor_on_block": "Computer Monitor Off Block",
       "block.networkcraft.switch_block": "Switch Block"
     }
