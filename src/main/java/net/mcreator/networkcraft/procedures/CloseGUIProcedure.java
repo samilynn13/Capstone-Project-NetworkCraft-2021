@@ -10,7 +10,7 @@ import java.util.Map;
 @NetworkcraftModElements.ModElement.Tag
 public class CloseGUIProcedure extends NetworkcraftModElements.ModElement {
 	public CloseGUIProcedure(NetworkcraftModElements instance) {
-		super(instance, 8);
+		super(instance, 9);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {

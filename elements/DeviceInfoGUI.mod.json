@@ -1,0 +1,118 @@
+{
+  "_fv": 13,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 225,
+    "height": 184,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": true,
+    "components": [
+      {
+        "type": "label",
+        "data": {
+          "text": "Device Information",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Device Information",
+          "x": 168,
+          "y": 44
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Device Name",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Device Name",
+          "x": 113,
+          "y": 70
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Exit",
+          "onClick": {
+            "name": "CloseGUI"
+          },
+          "width": 45,
+          "height": 20,
+          "name": "Exit",
+          "x": 185,
+          "y": 180
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "MAC Address",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "MAC Address",
+          "x": 113,
+          "y": 101
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "IP Address",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "IP Address",
+          "x": 115,
+          "y": 130
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "Input Device Name",
+          "width": 120,
+          "height": 20,
+          "name": "Name",
+          "x": 182,
+          "y": 66
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "00-00-00-00-00-00",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "00-00-00-00-00-00",
+          "x": 182,
+          "y": 101
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "0.0.0.0",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "0.0.0.0",
+          "x": 181,
+          "y": 127
+        }
+      }
+    ]
+  }
+}

@@ -76,7 +76,7 @@
     "particleSpawningRadious": 0.5,
     "particleAmount": 4,
     "hasInventory": false,
-    "guiBoundTo": "DeviceInformation",
+    "guiBoundTo": "DeviceInfoGUI",
     "openGUIOnRightClick": true,
     "inventorySize": 9,
     "inventoryStackSize": 64,
@@ -92,6 +92,9 @@
     "isFluidTank": false,
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
+    "onBlockAdded": {
+      "name": "DeviceInfoTable"
+    },
     "spawnWorldTypes": [],
     "restrictionBiomes": [],
     "blocksToReplace": [

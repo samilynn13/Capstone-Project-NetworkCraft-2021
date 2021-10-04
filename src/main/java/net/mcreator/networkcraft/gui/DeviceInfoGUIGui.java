@@ -24,22 +24,29 @@ import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.inventory.container.Container;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.client.gui.widget.button.Button;
+import net.minecraft.client.gui.widget.TextFieldWidget;
 import net.minecraft.client.gui.screen.inventory.ContainerScreen;
 import net.minecraft.client.gui.ScreenManager;
 import net.minecraft.client.Minecraft;
 
+import net.mcreator.networkcraft.procedures.CloseGUIProcedure;
+
 import net.mcreator.networkcraft.NetworkcraftModElements;
+import net.mcreator.networkcraft.NetworkcraftMod;
 
 import java.util.function.Supplier;
 import java.util.Map;
 import java.util.HashMap;
 
+import net.mcreator.networkcraft.block.DesktopBlock;
+
 @NetworkcraftModElements.ModElement.Tag
-public class TestGui extends NetworkcraftModElements.ModElement {
+public class DeviceInfoGUIGui extends NetworkcraftModElements.ModElement {
 	public static HashMap guistate = new HashMap();
 	private static ContainerType<GuiContainerMod> containerType = null;
-	public TestGui(NetworkcraftModElements instance) {
-		super(instance, 9);
+	public DeviceInfoGUIGui(NetworkcraftModElements instance) {
+		super(instance, 8);
 		elements.addNetworkMessage(ButtonPressedMessage.class, ButtonPressedMessage::buffer, ButtonPressedMessage::new,
 				ButtonPressedMessage::handler);
 		elements.addNetworkMessage(GUISlotChangedMessage.class, GUISlotChangedMessage::buffer, GUISlotChangedMessage::new,
@@ -55,7 +62,7 @@ public class TestGui extends NetworkcraftModElements.ModElement {
 
 	@SubscribeEvent
 	public void registerContainer(RegistryEvent.Register<ContainerType<?>> event) {
-		event.getRegistry().register(containerType.setRegistryName("test"));
+		event.getRegistry().register(containerType.setRegistryName("device_info_gui"));
 	}
 	public static class GuiContainerModFactory implements IContainerFactory {
 		public GuiContainerMod create(int id, PlayerInventory inv, PacketBuffer extraData) {
@@ -99,6 +106,7 @@ public class TestGui extends NetworkcraftModElements.ModElement {
 		private World world;
 		private int x, y, z;
 		private PlayerEntity entity;
+		TextFieldWidget Name;
 		public GuiWindow(GuiContainerMod container, PlayerInventory inventory, ITextComponent text) {
 			super(container, inventory, text);
 			this.world = container.world;
@@ -106,15 +114,21 @@ public class TestGui extends NetworkcraftModElements.ModElement {
 			this.y = container.y;
 			this.z = container.z;
 			this.entity = container.entity;
-			this.xSize = 176;
-			this.ySize = 166;
+			this.xSize = 225;
+			this.ySize = 184;
 		}
-		private static final ResourceLocation texture = new ResourceLocation("networkcraft:textures/test.png");
+
+		@Override
+		public boolean isPauseScreen() {
+			return true;
+		}
+		private static final ResourceLocation texture = new ResourceLocation("networkcraft:textures/device_info_gui.png");
 		@Override
 		public void render(int mouseX, int mouseY, float partialTicks) {
 			this.renderBackground();
 			super.render(mouseX, mouseY, partialTicks);
 			this.renderHoveredToolTip(mouseX, mouseY);
+			Name.render(mouseX, mouseY, partialTicks);
 		}
 
 		@Override
@@ -132,16 +146,25 @@ public class TestGui extends NetworkcraftModElements.ModElement {
 				this.minecraft.player.closeScreen();
 				return true;
 			}
+			if (Name.isFocused())
+				return Name.keyPressed(key, b, c);
 			return super.keyPressed(key, b, c);
 		}
 
 		@Override
 		public void tick() {
 			super.tick();
+			Name.tick();
 		}
 
 		@Override
 		protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
+			this.font.drawString("Device Information", 67, 16, -12829636);
+			this.font.drawString("Device Name", 12, 42, -12829636);
+			this.font.drawString("MAC Address", 12, 73, -12829636);
+			this.font.drawString("IP Address", 14, 102, -12829636);
+			this.font.drawString("000000000000", 81, 73, -12829636);
+			this.font.drawString("0.0.0.0", 80, 99, -12829636);
 		}
 
 		@Override
@@ -154,6 +177,35 @@ public class TestGui extends NetworkcraftModElements.ModElement {
 		public void init(Minecraft minecraft, int width, int height) {
 			super.init(minecraft, width, height);
 			minecraft.keyboardListener.enableRepeatEvents(true);
+			this.addButton(new Button(this.guiLeft + 84, this.guiTop + 152, 45, 20, "Exit", e -> {
+				NetworkcraftMod.PACKET_HANDLER.sendToServer(new ButtonPressedMessage(0, x, y, z));
+				handleButtonAction(entity, 0, x, y, z);
+			}));
+			Name = new TextFieldWidget(this.font, this.guiLeft + 81, this.guiTop + 38, 120, 20, "Input Device Name") {
+				{
+					setSuggestion("Input Device Name");
+				}
+				@Override
+				public void writeText(String text) {
+					super.writeText(text);
+					if (getText().isEmpty())
+						setSuggestion("Input Device Name");
+					else
+						setSuggestion(null);
+				}
+
+				@Override
+				public void setCursorPosition(int pos) {
+					super.setCursorPosition(pos);
+					if (getText().isEmpty())
+						setSuggestion("Input Device Name");
+					else
+						setSuggestion(null);
+				}
+			};
+			guistate.put("text:Name", Name);
+			Name.setMaxStringLength(32767);
+			this.children.add(this.Name);
 		}
 	}
 
@@ -243,6 +295,13 @@ public class TestGui extends NetworkcraftModElements.ModElement {
 		// security measure to prevent arbitrary chunk generation
 		if (!world.isBlockLoaded(new BlockPos(x, y, z)))
 			return;
+		if (buttonID == 0) {
+			{
+				Map<String, Object> $_dependencies = new HashMap<>();
+				$_dependencies.put("entity", entity);
+				CloseGUIProcedure.executeProcedure($_dependencies);
+			}
+		}
 	}
 
 	private static void handleSlotAction(PlayerEntity entity, int slotID, int changeType, int meta, int x, int y, int z) {

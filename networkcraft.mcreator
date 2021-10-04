@@ -117,18 +117,18 @@
       "registry_name": "desktop"
     },
     {
-      "name": "DeviceInformation",
+      "name": "DeviceInfoGUI",
       "type": "gui",
-      "sortid": 7,
+      "sortid": 8,
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "ids": {},
-      "registry_name": "device_information"
+      "registry_name": "device_info_gui"
     },
     {
       "name": "CloseGUI",
       "type": "procedure",
-      "sortid": 8,
+      "sortid": 9,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -143,13 +143,25 @@
       }
     },
     {
-      "name": "Test",
+      "name": "RandMAC",
       "type": "procedure",
-      "sortid": 9,
+      "sortid": 11,
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "test",
+      "registry_name": "rand_mac",
+      "metadata": {
+        "dependencies": []
+      }
+    },
+    {
+      "name": "DeviceInfoTable",
+      "type": "procedure",
+      "sortid": 12,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "device_info_table",
       "metadata": {
         "dependencies": []
       }

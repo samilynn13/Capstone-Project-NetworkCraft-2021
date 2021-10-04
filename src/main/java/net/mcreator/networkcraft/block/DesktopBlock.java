@@ -33,10 +33,13 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Block;
 
-import net.mcreator.networkcraft.gui.DeviceInformationGui;
+import net.mcreator.networkcraft.procedures.DeviceInfoTableProcedure;
+import net.mcreator.networkcraft.gui.DeviceInfoGUIGui;
 import net.mcreator.networkcraft.NetworkcraftModElements;
 
+import java.util.Map;
 import java.util.List;
+import java.util.HashMap;
 import java.util.Collections;
 
 import io.netty.buffer.Unpooled;
@@ -86,6 +89,18 @@ public class DesktopBlock extends NetworkcraftModElements.ModElement {
 		}
 
 		@Override
+		public void onBlockAdded(BlockState state, World world, BlockPos pos, BlockState oldState, boolean moving) {
+			super.onBlockAdded(state, world, pos, oldState, moving);
+			int x = pos.getX();
+			int y = pos.getY();
+			int z = pos.getZ();
+			{
+				Map<String, Object> $_dependencies = new HashMap<>();
+				DeviceInfoTableProcedure.executeProcedure($_dependencies);
+			}
+		}
+
+		@Override
 		public ActionResultType onBlockActivated(BlockState state, World world, BlockPos pos, PlayerEntity entity, Hand hand,
 				BlockRayTraceResult hit) {
 			super.onBlockActivated(state, world, pos, entity, hand, hit);
@@ -101,7 +116,7 @@ public class DesktopBlock extends NetworkcraftModElements.ModElement {
 
 					@Override
 					public Container createMenu(int id, PlayerInventory inventory, PlayerEntity player) {
-						return new DeviceInformationGui.GuiContainerMod(id, inventory,
+						return new DeviceInfoGUIGui.GuiContainerMod(id, inventory,
 								new PacketBuffer(Unpooled.buffer()).writeBlockPos(new BlockPos(x, y, z)));
 					}
 				}, new BlockPos(x, y, z));
