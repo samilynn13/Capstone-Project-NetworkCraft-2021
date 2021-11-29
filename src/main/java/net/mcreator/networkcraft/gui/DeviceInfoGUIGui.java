@@ -18,6 +18,7 @@ import net.minecraft.world.World;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.inventory.container.Slot;
 import net.minecraft.inventory.container.ContainerType;
@@ -31,15 +32,12 @@ import net.minecraft.client.gui.ScreenManager;
 import net.minecraft.client.Minecraft;
 
 import net.mcreator.networkcraft.procedures.CloseGUIProcedure;
-
 import net.mcreator.networkcraft.NetworkcraftModElements;
 import net.mcreator.networkcraft.NetworkcraftMod;
 
 import java.util.function.Supplier;
 import java.util.Map;
 import java.util.HashMap;
-
-import net.mcreator.networkcraft.block.DesktopBlock;
 
 @NetworkcraftModElements.ModElement.Tag
 public class DeviceInfoGUIGui extends NetworkcraftModElements.ModElement {
@@ -163,7 +161,14 @@ public class DeviceInfoGUIGui extends NetworkcraftModElements.ModElement {
 			this.font.drawString("Device Name", 12, 42, -12829636);
 			this.font.drawString("MAC Address", 12, 73, -12829636);
 			this.font.drawString("IP Address", 14, 102, -12829636);
-			this.font.drawString("000000000000", 81, 73, -12829636);
+			this.font.drawString("" + (new Object() {
+				public String getValue(BlockPos pos, String tag) {
+					TileEntity tileEntity = world.getTileEntity(pos);
+					if (tileEntity != null)
+						return tileEntity.getTileData().getString(tag);
+					return "";
+				}
+			}.getValue(new BlockPos((int) x, (int) y, (int) z), "macAddress")) + "", 80, 72, -12829636);
 			this.font.drawString("0.0.0.0", 80, 99, -12829636);
 		}
 

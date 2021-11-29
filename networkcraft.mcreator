@@ -112,7 +112,7 @@
       "type": "block",
       "sortid": 6,
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "ids": {},
       "registry_name": "desktop"
     },
@@ -143,25 +143,13 @@
       }
     },
     {
-      "name": "RandMAC",
+      "name": "RandomMAC",
       "type": "procedure",
-      "sortid": 11,
+      "sortid": 10,
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "ids": {},
-      "registry_name": "rand_mac",
-      "metadata": {
-        "dependencies": []
-      }
-    },
-    {
-      "name": "DeviceInfoTable",
-      "type": "procedure",
-      "sortid": 12,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "device_info_table",
+      "registry_name": "random_mac",
       "metadata": {
         "dependencies": []
       }

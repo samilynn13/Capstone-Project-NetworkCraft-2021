@@ -75,7 +75,7 @@
     "particleSpawningShape": "Spread",
     "particleSpawningRadious": 0.5,
     "particleAmount": 4,
-    "hasInventory": false,
+    "hasInventory": true,
     "guiBoundTo": "DeviceInfoGUI",
     "openGUIOnRightClick": true,
     "inventorySize": 9,
@@ -93,7 +93,7 @@
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
     "onBlockAdded": {
-      "name": "DeviceInfoTable"
+      "name": "RandomMAC"
     },
     "spawnWorldTypes": [],
     "restrictionBiomes": [],

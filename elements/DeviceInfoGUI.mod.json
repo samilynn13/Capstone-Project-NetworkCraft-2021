@@ -90,14 +90,14 @@
       {
         "type": "label",
         "data": {
-          "text": "00-00-00-00-00-00",
+          "text": "<BNBT:text:tagName>",
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "00-00-00-00-00-00",
-          "x": 182,
-          "y": 101
+          "name": "<BNBT:text:tagName>",
+          "x": 181,
+          "y": 100
         }
       },
       {
