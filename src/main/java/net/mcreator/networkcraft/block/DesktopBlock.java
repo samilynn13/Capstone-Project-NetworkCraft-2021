@@ -125,13 +125,16 @@ public class DesktopBlock extends NetworkcraftModElements.ModElement {
 			int x = pos.getX();
 			int y = pos.getY();
 			int z = pos.getZ();
+			// Output for testing purposes
 			System.out.println("Running onBlockAdded procedure for desktop...");
 			{
 				Map<String, Object> $_dependencies = new HashMap<>();
+				// Added code
 				$_dependencies.put("x", x);
 				$_dependencies.put("y", y);
 				$_dependencies.put("z", z);
 				$_dependencies.put("world", world);
+				// Added code end
 				RandomMACProcedure.executeProcedure($_dependencies);
 			}
 		}

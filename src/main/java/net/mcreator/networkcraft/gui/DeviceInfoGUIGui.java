@@ -168,8 +168,18 @@ public class DeviceInfoGUIGui extends NetworkcraftModElements.ModElement {
 						return tileEntity.getTileData().getString(tag);
 					return "";
 				}
+				// edited the in quotes below from "tile entity" to "macAddress" which matches what RandomMACProcedure names this as 
 			}.getValue(new BlockPos((int) x, (int) y, (int) z), "macAddress")) + "", 80, 72, -12829636);
-			this.font.drawString("0.0.0.0", 80, 99, -12829636);
+			// copied macAddress code above and edited it for ipAddress
+			this.font.drawString("" + (new Object() {
+				public String getValue(BlockPos pos, String tag) {
+					TileEntity tileEntity = world.getTileEntity(pos);
+					if (tileEntity != null)
+						return tileEntity.getTileData().getString(tag);
+					return "";
+				}
+			}.getValue(new BlockPos((int) x, (int) y, (int) z), "ipAddress")) + "", 80, 99, -12829636);
+
 		}
 
 		@Override

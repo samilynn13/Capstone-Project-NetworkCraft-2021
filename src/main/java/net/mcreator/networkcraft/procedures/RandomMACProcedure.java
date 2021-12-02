@@ -45,9 +45,13 @@ public class RandomMACProcedure extends NetworkcraftModElements.ModElement {
 		if (!world.getWorld().isRemote) {
 			BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 			TileEntity _tileEntity = world.getTileEntity(_bp);
+			// Copied above, but as another variable for the IP address
+			TileEntity _tileEntity2 = world.getTileEntity(_bp);
 			BlockState _bs = world.getBlockState(_bp);
 			if (_tileEntity != null)
 				_tileEntity.getTileData().putString("macAddress", getRandomMacAddress());
+				// Copied above, but edited for IP address
+				_tileEntity2.getTileData().putString("ipAddress", getRandomIPAddress());
 			world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 		}
 	}
@@ -62,5 +66,12 @@ public class RandomMACProcedure extends NetworkcraftModElements.ModElement {
         }
         System.out.println("Mac address generated: " + mac.toUpperCase());
         return mac.toUpperCase();
+    }
+
+    public static String getRandomIPAddress(){
+
+    	return "10." + (int) (Math.random() * 255) + "."
+                + (int) (Math.random() * 255) + "."
+                + (int) (Math.random() * 255);
     }
 }
